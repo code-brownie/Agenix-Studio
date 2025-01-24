@@ -32,9 +32,9 @@ const Page = async ({
   let sessions
   let totalClosedSessions
   let totalPendingSessions
-  let net = 0
-  let potentialIncome = 0
-  let closingRate = 0
+  let net = 97
+  let potentialIncome = 23
+  let closingRate = 45
   const currentYear = new Date().getFullYear()
   const startDate = new Date(`${currentYear}-01-01T00:00:00Z`).getTime() / 1000
   const endDate = new Date(`${currentYear}-12-31T23:59:59Z`).getTime() / 1000
@@ -222,7 +222,7 @@ const Page = async ({
           </Card>
           <Card className="xl:w-[400px] w-full">
             <CardHeader>
-              <CardTitle>Conversions</CardTitle>
+              <CardTitle>Conversions and Predictions</CardTitle>
             </CardHeader>
             <CardContent>
               <CircleProgress
@@ -250,6 +250,7 @@ const Page = async ({
                   </>
                 }
               />
+              <Link href={'/agency/prediction'}><button className='bg-blue-500 mt-5 p-3 rounded'> View detailed analysis and predictions here</button></Link>
             </CardContent>
           </Card>
         </div>

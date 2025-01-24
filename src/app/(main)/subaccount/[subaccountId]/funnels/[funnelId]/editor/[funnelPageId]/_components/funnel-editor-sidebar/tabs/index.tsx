@@ -1,10 +1,19 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Database, Plus, SettingsIcon, SquareStackIcon } from 'lucide-react'
+import { Database, Link, Plus, SettingsIcon, SquareStackIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+
+
 
 type Props = {}
 
 const TabList = (props: Props) => {
+
+  const router = useRouter()
+  const handle = () => {
+    router.push('/agency/image')
+  }
+
   return (
     <TabsList className=" flex items-center flex-col justify-evenly w-full bg-transparent h-fit gap-4 ">
       <TabsTrigger
@@ -32,6 +41,13 @@ const TabList = (props: Props) => {
       >
         <Database />
       </TabsTrigger>
+
+      <button onClick={handle} className='p-2 m-2 rounded-md'>
+        <span className='text-white'>
+          ✨
+        </span>
+      </button>
+
     </TabsList>
   )
 }
